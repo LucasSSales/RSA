@@ -1,6 +1,6 @@
-from testeMod import option04
 import tkinter as tk
-
+from funcs import *
+from functools import partial
 
 class SampleApp(tk.Tk):
     def __init__(self):
@@ -15,12 +15,20 @@ class SampleApp(tk.Tk):
             self._frame.destroy()
         self._frame = new_frame
         self._frame.pack()
-        self._frame["bg"] = "red"
+        print(isinstance(new_frame, StartPage))
+        '''
+        if(not isinstance(new_frame, StartPage)):
+            retbtn = tk.Button(self, text="Voltar",
+                  command=lambda: master.switch_frame(StartPage))
+            retbtn.pack()
+            retbtn.place(x=190, y=145)
+        '''
+
 
 class StartPage(tk.Frame):
     def __init__(self, master):
         h = 100
-        tk.Frame.__init__(self, master, {"bg": "blue"})
+        tk.Frame.__init__(self, master)
 
         lb = tk.Label(self, text="Criptografia RSA",
             font =('Verdana', 22)).pack(side="top", fill="x")
@@ -28,12 +36,9 @@ class StartPage(tk.Frame):
             font =('Verdana', 11)).pack(side="top", fill="x")   
         tk.Label(self, text="EQUIPE: Lucas Sales, Jadson Crislan, Kelly Bianca, Thiago Henrique", 
             font =('Verdana', 8)).pack(side="top", fill="x")         
-        lb = tk.Label(self, text="",
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        lb = tk.Label(self, text="",
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        lb = tk.Label(self, text="",
-            font =('Verdana', 22)).pack(side="top", fill="x")
+        lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
+        lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
+        lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
         
         #Botao "gerar chave publica"
         btn01 = tk.Button(self, text="Gerar chave publica",
@@ -58,6 +63,7 @@ class StartPage(tk.Frame):
                   command=lambda: master.switch_frame(option04))
         btn04.pack()
         btn04.place(x=150, y = h+50)
+
 
 
 class PageOne(tk.Frame):
@@ -103,7 +109,8 @@ class PageOne(tk.Frame):
         def gerar():
             print(p.get(), q.get(), e.get())
 
-        okbtn = tk.Button(self, text="Gerar chave", command=gerar)
+        okbtn = tk.Button(self, text="Gerar chave", command=lambda:pqe(p.get(), q.get(), e.get()))
+        #okbtn["command"] = partial(pqe, p.get(), q.get(), e.get())
         okbtn.pack()
         okbtn.place(x=95, y=145)
 
@@ -111,6 +118,8 @@ class PageOne(tk.Frame):
                   command=lambda: master.switch_frame(StartPage))
         retbtn.pack()
         retbtn.place(x=190, y=145)
+
+        
 
 class PageTwo(tk.Frame):
     def __init__(self, master):
