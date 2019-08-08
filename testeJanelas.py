@@ -18,13 +18,13 @@ class SampleApp(tk.Tk):
         self._frame = new_frame
         self._frame.pack()
         print(isinstance(new_frame, StartPage))
-        '''
+        
         if(not isinstance(new_frame, StartPage)):
             retbtn = tk.Button(self, text="Voltar",
-                  command=lambda: master.switch_frame(StartPage))
+                  command=lambda: self.switch_frame(StartPage))
             retbtn.pack()
-            retbtn.place(x=190, y=145)
-        '''
+            retbtn.place(x=280, y=200)
+        
 
 
 class StartPage(tk.Frame):
@@ -38,7 +38,7 @@ class StartPage(tk.Frame):
             font =('Verdana', 11)).pack(side="top", fill="x")   
         tk.Label(self, text="EQUIPE: Lucas Sales, Jadson Crislan, Kelly Bianca, Thiago Henrique", 
             font =('Verdana', 8)).pack(side="top", fill="x")         
-        lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
+        lb = tk.Label(self, text="", font =('Verdana', 80)).pack(side="top", fill="x")
         lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
         lb = tk.Label(self, text="", font =('Verdana', 22)).pack(side="top", fill="x")
         
@@ -82,6 +82,10 @@ class PageOne(tk.Frame):
             font =('Verdana', 22)).pack(side="top", fill="x")
         tk.Label(self, text="", 
             font =('Verdana', 22)).pack(side="top", fill="x")
+        tk.Label(self, text="", 
+            font =('Verdana', 22)).pack(side="top", fill="x")
+        tk.Label(self, text="", 
+            font =('Verdana', 22)).pack(side="top", fill="x")
         
         plb = tk.Label(self, text="p:")
         plb.pack(side="top", fill="x")
@@ -116,10 +120,10 @@ class PageOne(tk.Frame):
         okbtn.pack()
         okbtn.place(x=95, y=145)
 
-        retbtn = tk.Button(self, text="Voltar",
-                  command=lambda: master.switch_frame(StartPage))
-        retbtn.pack()
-        retbtn.place(x=190, y=145)
+        # retbtn = tk.Button(self, text="Voltar",
+        #           command=lambda: master.switch_frame(StartPage))
+        # retbtn.pack()
+        # retbtn.place(x=190, y=145)
 
         
 
@@ -168,10 +172,10 @@ class PageTwo(tk.Frame):
         okbtn.pack()
         okbtn.place(x=65, y=200)
 
-        retbtn = tk.Button(self, text="Voltar",
-                  command=lambda: master.switch_frame(StartPage))
-        retbtn.pack()
-        retbtn.place(x=160, y=200)
+        # retbtn = tk.Button(self, text="Voltar",
+        #           command=lambda: master.switch_frame(StartPage))
+        # retbtn.pack()
+        # retbtn.place(x=160, y=200)
 
 class option03(tk.Frame):
     def __init__(self, master):
@@ -220,10 +224,10 @@ class option03(tk.Frame):
         okbtn.pack()
         okbtn.place(x=65, y=145)
 
-        retbtn = tk.Button(self, text="Voltar",
-                  command=lambda: master.switch_frame(StartPage))
-        retbtn.pack()
-        retbtn.place(x=170, y=145)
+        # retbtn = tk.Button(self, text="Voltar",
+        #           command=lambda: master.switch_frame(StartPage))
+        # retbtn.pack()
+        # retbtn.place(x=170, y=145)
 
 
 class option04(tk.Frame):
@@ -241,10 +245,10 @@ class option04(tk.Frame):
         tk.Label(self, text="", 
             font =('Verdana', 22)).pack(side="top", fill="x")
 
-        retbtn = tk.Button(self, text="Voltar",
-                  command=lambda: master.switch_frame(StartPage))
-        retbtn.pack()
-        retbtn.place(x=190, y=145)
+        # retbtn = tk.Button(self, text="Voltar",
+        #           command=lambda: master.switch_frame(StartPage))
+        # retbtn.pack()
+        # retbtn.place(x=190, y=145)
         
 
 
