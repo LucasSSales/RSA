@@ -3,6 +3,9 @@
 import tkinter as tk
 from funcs import *
 from functools import partial
+from GerarChavePublica import PageOne
+from Criptografar import PageTwo
+from descriptografar import option03
 
 class SampleApp(tk.Tk):
     def __init__(self):
@@ -68,166 +71,13 @@ class StartPage(tk.Frame):
 
 
 
-class PageOne(tk.Frame):
-    def __init__(self, master):
-        tk.Frame.__init__(self, master)
 
-        tk.Label(self, text="Gerar chave publica", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="Insira os valores abaixo", 
-            font =('Verdana', 10)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        
-        plb = tk.Label(self, text="p:")
-        plb.pack(side="top", fill="x")
-        plb.place(x = 80, y = 65)
-
-        p = tk.Entry(self)
-        p.pack()
-        p.place(x = 100, y = 65)
-
-        qlb = tk.Label(self, text="q:")
-        qlb.pack(side="top", fill="x")
-        qlb.place(x = 80, y = 90)
-
-        q = tk.Entry(self)
-        q.pack()
-        q.place(x = 100, y = 90)
-
-        elb = tk.Label(self, text="e:")
-        elb.pack(side="top", fill="x")
-        elb.place(x = 80, y = 115)
-
-        e = tk.Entry(self)
-        e.pack()
-        e.place(x = 100, y = 115)
-
-
-        def gerar():
-            print(p.get(), q.get(), e.get())
-
-        okbtn = tk.Button(self, text="Gerar chave", command=lambda:pqe(p.get(), q.get(), e.get()))
-        #okbtn["command"] = partial(pqe, p.get(), q.get(), e.get())
-        okbtn.pack()
-        okbtn.place(x=95, y=145)
-
-        # retbtn = tk.Button(self, text="Voltar",
-        #           command=lambda: master.switch_frame(StartPage))
-        # retbtn.pack()
-        # retbtn.place(x=190, y=145)
 
         
 
-class PageTwo(tk.Frame):
-    def __init__(self, master):
-        tk.Frame.__init__(self, master)
-
-        tk.Label(self, text="Criptografar", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="Insira a mensagem no campo abaixo", 
-            font =('Verdana', 10)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        
-
-        mensagem = tk.Text(self, height=6, width=30)
-        mensagem.pack(fill="x")
-        mensagem.place(x = 1, y = 65)
-
-        pubKeylb = tk.Label(self, text="Chave Publica:")
-        pubKeylb.pack(side="top", fill="x")
-        pubKeylb.place(x = 10, y = 175)
-
-        pubKey = tk.Entry(self)
-        pubKey.pack()
-        pubKey.place(x = 100, y = 175)
 
 
 
-        def teste():
-            m = mensagem.get("1.0",'end-1c')
-            pk = pubKey.get()
-            print(m, pk)
-
-        okbtn = tk.Button(self, text="Criptografar", command=teste)
-        okbtn.pack()
-        okbtn.place(x=65, y=200)
-
-        # retbtn = tk.Button(self, text="Voltar",
-        #           command=lambda: master.switch_frame(StartPage))
-        # retbtn.pack()
-        # retbtn.place(x=160, y=200)
-
-class option03(tk.Frame):
-    def __init__(self, master):
-        tk.Frame.__init__(self, master)
-
-        tk.Label(self, text="Descriptografar", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="Insira os valores abaixo", 
-            font =('Verdana', 10)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        
-        plb = tk.Label(self, text="p:")
-        plb.pack(side="top", fill="x")
-        plb.place(x = 60, y = 65)
-
-        p = tk.Entry(self)
-        p.pack()
-        p.place(x = 80, y = 65)
-
-        qlb = tk.Label(self, text="q:")
-        qlb.pack(side="top", fill="x")
-        qlb.place(x = 60, y = 90)
-
-        q = tk.Entry(self)
-        q.pack()
-        q.place(x = 80, y = 90)
-
-        elb = tk.Label(self, text="e:")
-        elb.pack(side="top", fill="x")
-        elb.place(x = 60, y = 115)
-
-        e = tk.Entry(self)
-        e.pack()
-        e.place(x = 80, y = 115)
-
-
-        def descrip():
-            print(p.get(), q.get(), e.get())
-
-        okbtn = tk.Button(self, text="Descriptografar", command=descrip)
-        okbtn.pack()
-        okbtn.place(x=65, y=145)
-
-        # retbtn = tk.Button(self, text="Voltar",
-        #           command=lambda: master.switch_frame(StartPage))
-        # retbtn.pack()
-        # retbtn.place(x=170, y=145)
 
 
 class option04(tk.Frame):
