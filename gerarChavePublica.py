@@ -1,5 +1,7 @@
 import tkinter as tk
 from funcs import *
+import tkinter.messagebox
+from RSAopcoes import *
 
 class PageOne(tk.Frame):
     def __init__(self, master):
@@ -46,9 +48,30 @@ class PageOne(tk.Frame):
 
 
         def gerar():
-            print(p.get(), q.get(), e.get())
+            if(not str(p.get()).isnumeric() or not str(q.get()).isnumeric() or not str(e.get()).isnumeric()):
+                tkinter.messagebox.showinfo("teste", "por favor, insira valores numericos inteiros")
+            else:
+                err =  ""
+                titulo = "ERRO!"
+                print(int(p.get()), int(q.get()), int(e.get()))
+                if(not isPrime(int(p.get()))):
+                    err += "p não é primo\n"
+                if(not isPrime(int(q.get()))):
+                    err += "q não é primo\n"
+                if(not mdc(int(e.get()), (int(p.get())-1)* (int(q.get()) -1)  ) == 1):
+                    err += "e nao é coprimo a (p-1)(q-1)\n"
 
-        okbtn = tk.Button(self, text="Gerar chave", command=lambda:pqe(p.get(), q.get(), e.get()))
+                if(err == ""):
+                    err = "Chave Gerada com Sucesso!"
+                    titulo = "Concluido"
+                    file = open("chavePublica.txt", "w")
+                    file.write(str(gerarChavePublica(int(p.get()), int(q.get()), int(e.get()))))
+                    file.close()
+                
+                tkinter.messagebox.showinfo(titulo, err)
+
+
+        okbtn = tk.Button(self, text="Gerar chave", command=gerar)
         okbtn.pack()
         okbtn.place(x=95, y=145)
 

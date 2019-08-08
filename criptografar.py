@@ -1,5 +1,6 @@
 import tkinter as tk
 from funcs import *
+import tkinter.messagebox
 
 class PageTwo(tk.Frame):
     def __init__(self, master):
@@ -37,12 +38,45 @@ class PageTwo(tk.Frame):
 
 
 
-        def teste():
-            m = mensagem.get("1.0",'end-1c')
-            pk = pubKey.get()
-            print(m, pk)
+        def cripto():
+            err= "" #log de erros
+            val = mensagem.get("1.0",'end-1c').split() #lista de substrings para validacao
 
-        okbtn = tk.Button(self, text="Criptografar", command=teste)
+
+            for m in val:
+                if(not m.isalpha()):
+                    err+= "Mensagem Inválida!\n"
+                    break
+
+
+            pk = pubKey.get().split()
+            if(len(pk)!=2 or not str(pk[0]).isnumeric() or not str(pk[1]).isnumeric()):
+                err+="Chave pública Inválida"
+            
+
+            if err=="" :
+                m = mensagem.get("1.0",'end-1c') #string da mensagem
+                file = open("mensagemCriptografada.txt", "w")
+                #para cada letra na mensagem
+                j = 
+                for l in m:
+                    if(l == ' '):
+                        c = ((26)**int(pk[1])%int(pk[0]))
+                    else:
+                        c = ((ord(c.upper())-65)**int(pk[1])%int(pk[0]))
+
+                    file.write(str(c)  + " ")
+                    
+                    #(char**publicKey[1])%publicKey[0]
+
+
+                tkinter.messagebox.showinfo("Concluído!", "Mensagem Criptografada")
+            else:
+                tkinter.messagebox.showinfo("ERRO!", err)
+
+
+
+        okbtn = tk.Button(self, text="Criptografar", command=cripto)
         okbtn.pack()
         okbtn.place(x=65, y=200)
 
