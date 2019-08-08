@@ -3,8 +3,8 @@
 import tkinter as tk
 from funcs import *
 from functools import partial
-from GerarChavePublica import PageOne
-from Criptografar import PageTwo
+from gerarChavePublica import PageOne
+from criptografar import PageTwo
 from descriptografar import option03
 
 class SampleApp(tk.Tk):

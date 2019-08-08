@@ -6,4 +6,4 @@ def pqe(p, q, e):
 	try:
 		p1 = int(p)
 	except:
-		tkinter.messagebox.showinfo("teste", "deu ruim, filhao")
+		tkinter.messagebox.showinfo("teste", "Valores invalidos inseridos")
