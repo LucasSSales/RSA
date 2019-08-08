@@ -1,4 +1,4 @@
-# Multi-frame tkinter application v2.3
+from testeMod import option04
 import tkinter as tk
 
 
@@ -7,12 +7,6 @@ class SampleApp(tk.Tk):
         tk.Tk.__init__(self)
         self._frame = None
         self.switch_frame(StartPage)
-
-        #janela.title("RSA")
-        #janela["bg"] = "red"
-        #Label(janela, text="hello world!").pack()
-        #LarguraxAltura+Esquerda+Topo
-        #janela.geometry("800x500")
 
     def switch_frame(self, frame_class):
         """Destroys current frame and replaces it with a new one."""
@@ -27,8 +21,6 @@ class StartPage(tk.Frame):
     def __init__(self, master):
         h = 100
         tk.Frame.__init__(self, master, {"bg": "blue"})
-        #tk.Frame.geometry("800x500")
-        #tk.Frame["height"] = 500
 
         lb = tk.Label(self, text="Criptografia RSA",
             font =('Verdana', 22)).pack(side="top", fill="x")
@@ -108,11 +100,10 @@ class PageOne(tk.Frame):
         e.place(x = 100, y = 115)
 
 
-        def teste():
-            print("teste")
+        def gerar():
+            print(p.get(), q.get(), e.get())
 
-        okbtn = tk.Button(self, text="Gerar chave",
-                  command=lambda: master.switch_frame(StartPage))
+        okbtn = tk.Button(self, text="Gerar chave", command=gerar)
         okbtn.pack()
         okbtn.place(x=95, y=145)
 
@@ -156,8 +147,13 @@ class PageTwo(tk.Frame):
         pubKey.place(x = 100, y = 175)
 
 
-        okbtn = tk.Button(self, text="Criptografar",
-                  command=lambda: master.switch_frame(StartPage))
+
+        def teste():
+            m = mensagem.get("1.0",'end-1c')
+            pk = pubKey.get()
+            print(m, pk)
+
+        okbtn = tk.Button(self, text="Criptografar", command=teste)
         okbtn.pack()
         okbtn.place(x=65, y=200)
 
@@ -206,11 +202,10 @@ class option03(tk.Frame):
         e.place(x = 80, y = 115)
 
 
-        def teste():
-            print("teste")
+        def descrip():
+            print(p.get(), q.get(), e.get())
 
-        okbtn = tk.Button(self, text="Descriptografar",
-                  command=lambda: master.switch_frame(StartPage))
+        okbtn = tk.Button(self, text="Descriptografar", command=descrip)
         okbtn.pack()
         okbtn.place(x=65, y=145)
 
