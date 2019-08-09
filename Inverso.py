@@ -21,7 +21,6 @@ def inversoModular(n, m):
 		return
 	#percorrendo tds itens do dicionario 
 	for i in range(len(restos)):
-		print(restos[r])
 		#vendo se o ultimo item da lista eh uma chave
 		if restos[r][3] in restos:
 			#realizando a "substituicao" onde o ultimo item eh um dos restos
@@ -34,7 +33,6 @@ def inversoModular(n, m):
 			restos[r][1] = restos[restos[r][3]][1]
 			restos[r][2] = restos[restos[r][3]][2] + add
 			restos[r][3] = restos[restos[r][3]][3]
-
 	#retornando o coef do valor
 	if(restos[r][1] == n):
 		return  restos[r][0]%m
