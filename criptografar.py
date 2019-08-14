@@ -60,9 +60,11 @@ class Option02(tk.Frame):
                 for l in m:
                     c = ""
                     if(l == ' '):
-                        c = ((26)**int(pk[1])%int(pk[0])) #aplicar a expo mod rapida
+                        c = fast_modular_exponentiation(26, int(pk[1]), int(pk[0])) #((26)**int(pk[1])%int(pk[0])) #aplicar a expo mod rapida
                     else:
-                        c = ((ord(l.upper())-65)**int(pk[1])%int(pk[0])) #aplicar a expo mod rapida
+                        c = fast_modular_exponentiation((ord(l.upper())-65), int(pk[1]), int(pk[0])) #((ord(l.upper())-65)**int(pk[1])%int(pk[0])) #aplicar a expo mod rapida
+                    #print(((ord(l.upper())-65)**int(pk[1])%int(pk[0])))
+                    #print(c)
                     file.write(str(c)  + " ")
                 file.close()
                 #alerta de sucesso

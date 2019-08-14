@@ -57,7 +57,9 @@ class Option03(tk.Frame):
                 desenc = open("mensagemDescriptografada.txt", "a")
                 #para cada letra na mensagem encriptada
                 for l in crip:
-                    m = (int(l)**d)%( int(p.get())*int(q.get()) ) #aplicar a expo mod rapida
+                    n = int(p.get())*int(q.get())
+                    m = fast_modular_exponentiation(int(l), d, n) #aplicar a expo mod rapida
+
                     if(m == 26):
                         desenc.write(' ')
                     else:

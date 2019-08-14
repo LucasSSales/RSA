@@ -2,6 +2,7 @@ import tkinter as tk
 from funcoesAux import *
 import tkinter.messagebox
 import os
+from sympy.ntheory import isprime
 
 class Option01(tk.Frame):
     def __init__(self, master):

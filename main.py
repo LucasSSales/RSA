@@ -6,6 +6,18 @@ import tkinter as tk
 from gerarChavePublica import Option01
 from criptografar import Option02
 from descriptografar import Option03
+from botaoMisterioso import Option04
+
+from funcoesAux import *
+
+
+print(fast_modular_exponentiation(300, 141, 391))
+print(fast_modular_exponentiation(0, 141, 391))
+print(fast_modular_exponentiation(234, 141, 391))
+print(fast_modular_exponentiation(347, 141, 391))
+print(fast_modular_exponentiation(59, 141, 391))
+#300 0 234 347 59 92 315 0 199 59 350 199 234 347
+
 
 class SampleApp(tk.Tk):
     def __init__(self):
@@ -57,19 +69,7 @@ class StartPage(tk.Frame):
                   command=lambda: master.switch_frame(Option04))
         btn04.pack(); btn04.place(x=150, y = h+50)
 
-class Option04(tk.Frame):
-    def __init__(self, master):
-        tk.Frame.__init__(self, master)
-        tk.Label(self, text="Em desenvolvimento", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 10)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")
-        tk.Label(self, text="", 
-            font =('Verdana', 22)).pack(side="top", fill="x")        
+     
 
 
 if __name__ == "__main__":
