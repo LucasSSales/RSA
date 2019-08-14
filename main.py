@@ -8,16 +8,6 @@ from criptografar import Option02
 from descriptografar import Option03
 from botaoMisterioso import Option04
 
-from funcoesAux import *
-
-
-print(fast_modular_exponentiation(300, 141, 391))
-print(fast_modular_exponentiation(0, 141, 391))
-print(fast_modular_exponentiation(234, 141, 391))
-print(fast_modular_exponentiation(347, 141, 391))
-print(fast_modular_exponentiation(59, 141, 391))
-#300 0 234 347 59 92 315 0 199 59 350 199 234 347
-
 
 class SampleApp(tk.Tk):
     def __init__(self):
@@ -68,8 +58,6 @@ class StartPage(tk.Frame):
         btn04 = tk.Button(self, text="Botão Misterioso",
                   command=lambda: master.switch_frame(Option04))
         btn04.pack(); btn04.place(x=150, y = h+50)
-
-     
 
 
 if __name__ == "__main__":
