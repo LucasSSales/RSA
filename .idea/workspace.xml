@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78781846-43d6-422a-a4dd-82b1ef2dabcd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/RSA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RSA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chavePublica.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chavePublica.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/funcoesAux.py" beforeDir="false" afterPath="$PROJECT_DIR$/funcoesAux.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hacks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hacks.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mensagemCriptografada.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mensagemCriptografada.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mensagemDescriptografada.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mensagemDescriptografada.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565741454287</updated>
-      <workItem from="1565894301431" duration="4099000" />
+      <workItem from="1565894301431" duration="4755000" />
     </task>
     <servers />
   </component>

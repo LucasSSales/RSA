@@ -27,12 +27,6 @@ def pqeValidacao(p, q, e):
 		return err
 
 
-def extended_euclidean_algorithm(a, b, c=1):
-    r = b % a
-    if r == 0:
-        return (c/a) % (b/a)
-    return (extended_euclidean_algorithm(r, a, -c) * b + c) / (a % b)
-
 
 def fast_modular_exponentiation(n, exp, mod):
 	binary = []
@@ -53,7 +47,6 @@ def fast_modular_exponentiation(n, exp, mod):
 
 
 def prime_factorization(n, idx):
-	print(idx)
 	result = []
 	if n%2 == 0:
 		result.append(2)
