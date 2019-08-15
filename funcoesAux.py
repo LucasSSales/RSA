@@ -1,5 +1,6 @@
 from sympy.ntheory import isprime
 import numpy as np
+from Inverso import *
 
 #calculo do mdc utilizando algoritmo de euclides
 def mdc(a, b):
@@ -19,8 +20,8 @@ def pqeValidacao(p, q, e):
 			err += "p não é primo\n"
 		if(not isprime(int(q))):
 			err += "q não é primo\n"
-		if(int(p)*int(q) <= 26):
-			return "N menor que 26, por favor reinsira p ou q"
+		if(int(e) < (int(p)-1)*(int(q)-1)):
+			err += "e menor que 26 (p-1)(q-1)"
 		if(not mdc( (int(p)-1)*(int(q)-1), int(e) ) == 1):
 			err += "e nao é coprimo a (p-1)(q-1)\n"
 		return err
@@ -76,7 +77,7 @@ def breaking_rsa(n, e, crypto):
 	decrypt = ""
 	x = prime_factorization(n, 0)
 	fi = (x[0]-1)*(x[1]-1)
-	key = int(extended_euclidean_algorithm(e, fi))
+	key = int(inversoModular(e, fi))
 	for i in crypto:
 		c = chr(fast_modular_exponentiation(int(i), key, n) + 65)
 		if(c == '['):
