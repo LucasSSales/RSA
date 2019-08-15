@@ -7,7 +7,7 @@ from gerarChavePublica import Option01
 from criptografar import Option02
 from descriptografar import Option03
 from botaoMisterioso import Option04
-
+from sympy.ntheory import isprime
 
 class SampleApp(tk.Tk):
     def __init__(self):

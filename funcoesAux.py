@@ -9,8 +9,9 @@ def mdc(a, b):
 
 #validacao das entradas p, q, e nas telas de gerar chave publica e descriptografia
 def pqeValidacao(p, q, e):
-	if(not str(p).isnumeric() or not str(q).isnumeric() or not str(e).isnumeric()):
-		return "Por favor, insira APENAS valores numericos"
+	if(not str(p).isnumeric() or not str(q).isnumeric() or not str(e).isnumeric()
+	or int(p)<=0 or int(q)<=0 or int(e)<=0):
+		return "Por favor, insira APENAS valores numericos e maiores que 0"
 	else:
 		err =  ""
 		titulo = "ERRO!"
@@ -18,7 +19,9 @@ def pqeValidacao(p, q, e):
 			err += "p não é primo\n"
 		if(not isprime(int(q))):
 			err += "q não é primo\n"
-		if(not mdc( int(e), (int(p)-1)*(int(q)-1) ) == 1):
+		if(int(p)*int(q) <= 26):
+			return "N menor que 26, por favor reinsira p ou q"
+		if(not mdc( (int(p)-1)*(int(q)-1), int(e) ) == 1):
 			err += "e nao é coprimo a (p-1)(q-1)\n"
 		return err
 
