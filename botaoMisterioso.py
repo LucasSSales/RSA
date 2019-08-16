@@ -55,4 +55,4 @@ class Option04(tk.Frame):
             tkinter.messagebox.showinfo(titulo, err) #alerta de sucesso ou falha
 
         okbtn = tk.Button(self, text="CLIQUE E DESCUBRA :)", command=breaker)
-        okbtn.pack(); okbtn.place(x=65, y=145)
+        okbtn.pack(); okbtn.place(x=65, y=100)

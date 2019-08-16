@@ -20,8 +20,6 @@ def pqeValidacao(p, q, e):
 			err += "p não é primo\n"
 		if(not isprime(int(q))):
 			err += "q não é primo\n"
-		if(int(e) < (int(p)-1)*(int(q)-1)):
-			err += "e menor que 26 (p-1)(q-1)"
 		if(not mdc( (int(p)-1)*(int(q)-1), int(e) ) == 1):
 			err += "e nao é coprimo a (p-1)(q-1)\n"
 		return err
