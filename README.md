@@ -12,4 +12,5 @@ Funcionalidades:
 3- Descriptografar
 
 4- Clique e Descubra :)
+
 #hacks
