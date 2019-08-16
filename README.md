@@ -11,6 +11,5 @@ Funcionalidades:
 
 3- Descriptografar
 
-4- QUEBRAR CRIPTOGRAFIA
-
+4- Clique e Descubra :)
 #hacks
